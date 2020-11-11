@@ -44,6 +44,18 @@ Debuild asks for the orig tarball, you can proceed (y) or create it with:
   tar zcf ../dns-reverse-proxy_1.orig.tar.gz --exclude debian --exclude .git --exclude .gitignore .
 -->
 
+# Docker
+
+You can use the Docker image by building it using `docker build . -t dns_reverse_proxy`
+
+Alternatively you can use the Docker image `lmmdock/dns-reverse-proxy`.
+
+Example:
+
+```bash
+docker run -it --name=dns-reverse-proxy --rm -p 53:53/udp -p 53:53 lmmdock/dns-reverse-proxy dns_reverse_proxy -default=8.8.8.8:53
+```
+
 # License #
 
 [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
